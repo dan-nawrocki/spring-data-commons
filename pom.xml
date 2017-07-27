@@ -5,21 +5,22 @@
 
 	<groupId>org.springframework.data</groupId>
 	<artifactId>spring-data-commons</artifactId>
-	<version>1.13.2.BUILD-SNAPSHOT</version>
+	<version>1.13.7.BUILD-SNAPSHOT</version>
 
 	<name>Spring Data Core</name>
 
 	<parent>
 		<groupId>org.springframework.data.build</groupId>
 		<artifactId>spring-data-parent</artifactId>
-		<version>1.9.2.BUILD-SNAPSHOT</version>
+		<version>1.9.7.BUILD-SNAPSHOT</version>
 	</parent>
 
 	<properties>
 		<dist.key>DATACMNS</dist.key>
-		<javaslang>2.0.4</javaslang>
+		<javaslang>2.0.6</javaslang>
+		<vavr>0.9.0</vavr>
 		<scala>2.11.7</scala>
-		<xmlbeam>1.4.8</xmlbeam>
+		<xmlbeam>1.4.12</xmlbeam>
 	</properties>
 
 	<dependencies>
@@ -150,6 +151,12 @@
 			<version>${javaslang}</version>
 			<optional>true</optional>
 		</dependency>
+		<dependency>
+			<groupId>io.vavr</groupId>
+			<artifactId>vavr</artifactId>
+			<version>${vavr}</version>
+			<optional>true</optional>
+		</dependency>
 
 		<dependency>
 			<groupId>javax.el</groupId>
@@ -245,7 +252,7 @@
 							<goal>test-process</goal>
 						</goals>
 						<configuration>
-							<outputDirectory>${project.build.directory}/generated-sources/test-annotations</outputDirectory>
+							<outputDirectory>${project.build.directory}/generated-test-sources/test-annotations</outputDirectory>
 							<processor>com.querydsl.apt.QuerydslAnnotationProcessor</processor>
 						</configuration>
 					</execution>
